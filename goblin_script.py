@@ -1,3 +1,10 @@
+import random
+
+def _2d4():
+	damage = random.randint(1,4) + random.randint(1,4)
+	#print "2d4:", damage
+	return damage
+
 class goblin(object):
 
 	def __init__(self, name, max_health, current_health):
@@ -16,4 +23,13 @@ class goblin(object):
 
 hodor = goblin("Hodor", 10, 10)
 
-hodor.take_damage(11)
+hits_to_kill = 0
+
+print "Attacking goblin..."
+print "%s has %s hp" %(hodor.name, hodor.current_health)
+
+while hodor.current_health >= 1:
+	hodor.take_damage(_2d4())
+	print "%s has %s hp left" %(hodor.name, hodor.current_health)
+	hits_to_kill += 1
+print hits_to_kill, "hits to kill the goblin"
