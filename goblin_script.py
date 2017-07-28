@@ -1,5 +1,16 @@
+"""
+Rough draft of a model to find any significance in damage output using a 1d8 vs. 2d4 weapon.
+I am will examine average damage, how often one does more damage than the other, how often they
+tie and number of hits required to kill various monsters.
+
+I will probably turn the rolls into a class called Roll for the hell of it, add PEP8 considerations 
+and remove the current redundancies in the kill functions (though I am not sure how)
+"""
+
 from __future__ import division
 import random
+
+
 
 class goblin(object):
 
@@ -39,8 +50,8 @@ def kill_goblins_1d8(number_of_goblins):
 		#print hits_to_kill
 		data.append(hits_to_kill)
 	return data
-		#while victim.current_health >= 1:
-			#victim.take_damage(str(_2d4()))
+
+
 def kill_goblins_2d4(number_of_goblins):
 	data = []
 	number_of_goblins = int(number_of_goblins)
