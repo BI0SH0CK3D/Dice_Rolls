@@ -73,21 +73,3 @@ hits_per_kill_2d4 = kill_goblins_2d4(10)
 
 print "1d8", sum(hits_per_kill_1d8)/len(hits_per_kill_1d8)
 print "2d4", sum(hits_per_kill_2d4)/len(hits_per_kill_2d4)
-
-
-
-
-
-
-# hodor = goblin("Hodor", 10)
-# hits_to_kill = 0
-
-# print "Attacking goblin..."
-# print "%s has %s hp" %(hodor.name, hodor.current_health)
-
-# while hodor.current_health >= 1:
-# 	hodor.take_damage(_2d4())
-# 	print "%s has %s hp left" %(hodor.name, hodor.current_health)
-# 	hits_to_kill += 1
-
-# print hits_to_kill, "hits to kill the goblin"
