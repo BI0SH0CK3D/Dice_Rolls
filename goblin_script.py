@@ -4,7 +4,8 @@ I am will examine average damage, how often one does more damage than the other,
 tie and number of hits required to kill various monsters.
 
 I will probably turn the rolls into a class called Roll for the hell of it, add PEP8 considerations 
-and remove the current redundancies in the kill functions (though I am not sure how)
+and remove the current redundancies in the kill functions (though I am not sure how)...
+perhaps I could build the various damages into the take damage method and use a variable arguemnt 
 """
 
 from __future__ import division
