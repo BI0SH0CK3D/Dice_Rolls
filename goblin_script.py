@@ -35,7 +35,7 @@ def _1d8():
 	#print "1d8:", damage
 	return damage
 
-
+# number of hits required to kill 1hd monster
 def kill_goblins(number_of_goblins, d8 = True):
 	data = []
 	number_of_goblins = int(number_of_goblins)
@@ -51,12 +51,28 @@ def kill_goblins(number_of_goblins, d8 = True):
 				victim.take_damage(_2d4())
 				hits_to_kill += 1
 		#print hits_to_kill
-		data.append(hits_to_kill)
+		data.append(int(hits_to_kill))
 	return data
 
 
-hits_per_kill_1d8 = kill_goblins(10, d8 = True)
-hits_per_kill_2d4 = kill_goblins(10, d8 = False)
+hits_per_kill_1d8 = kill_goblins(500000, d8 = True)
+hits_per_kill_2d4 = kill_goblins(500000, d8 = False)
 
-print("1d8", sum(hits_per_kill_1d8)/len(hits_per_kill_1d8))
-print("2d4", sum(hits_per_kill_2d4)/len(hits_per_kill_2d4))
+# print("1d8", sum(hits_per_kill_1d8)/len(hits_per_kill_1d8))
+# print("2d4", sum(hits_per_kill_2d4)/len(hits_per_kill_2d4))
+
+d8_dict = {}
+d4_dict = {}
+
+for item in hits_per_kill_1d8:
+	if item not in d8_dict:
+		d8_dict[item] = 0
+	d8_dict[item] += 1
+
+for item in hits_per_kill_2d4:
+	if item not in d4_dict:
+		d4_dict[item] = 0
+	d4_dict[item] += 1
+
+print d8_dict
+print d4_dict
