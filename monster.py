@@ -1,6 +1,4 @@
 # create generic monster class outside of script
-import random 
-
 class Monster(object):
 
 	def __init__(self, name, max_health):
@@ -24,8 +22,8 @@ def roll(number, sides, bonus = 0):
 		number_rolled += random.randint(1, sides)
 	return number_rolled + bonus_damage
 
-print(roll(1,20,4))
+# print(roll(1,20,4))
 
-hodor = Monster("Hodor", 15)
-hodor.take_damage(roll(1,12))
-print hodor.current_health
+# hodor = Monster("Hodor", 15)
+# hodor.take_damage(roll(1,12))
+# print hodor.current_health
