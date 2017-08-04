@@ -43,8 +43,8 @@ def greataxe(number):
 			data.append(damage)
 	return data
 
-falchion_data = falchion(500)
-greataxe_data = greataxe(500)
+falchion_data = falchion(1000000)
+greataxe_data = greataxe(1000000)
 
-print "Average Falchion Damage:", sum(falchion_data)/len(falchion_data)
-print "Average Greataxe Damage:", sum(greataxe_data)/len(greataxe_data)
+print("Average Falchion Damage:", sum(falchion_data)/len(falchion_data))
+print("Average Greataxe Damage:", sum(greataxe_data)/len(greataxe_data))
