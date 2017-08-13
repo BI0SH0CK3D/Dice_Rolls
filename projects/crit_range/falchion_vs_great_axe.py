@@ -8,6 +8,7 @@ of 1-10 damage, not one roll of 1-10 and multiplying by 2
 
 import random 
 
+
 def roll(number, sides, bonus = 0):
 
 	number_rolled = 0
@@ -17,27 +18,37 @@ def roll(number, sides, bonus = 0):
 	return number_rolled + bonus_damage
 
 
-def falchion(number):
-	data = []
-	for i in range(number):
-		damage = 0
-		attack_roll = roll(1,20)
-		if attack_roll >= 19:
-			damage += roll(2,10)
-			data.append(damage)
-		else:
-			damage += roll(1,10)
-			data.append(damage)
-	return data
+# create weapon class that takes
+def weapon(number, weapon): 
+    data = []
+    
+    # choose weapon - two dice on a 19-20 or three on only a 20
+    if weapon == "Falchion" or 'Falchion':
+        crit_min = 19
+        crit_dice = 2
+    elif weapon == "Greataxe" or 'greataxe':
+        crit_min = 20
+        crit_dice = 3
+        
+    # make an attack for each number in range
+    for i in range(number):
+        damage = 0
+        attack_roll = roll(1,20)
+        
+        # if it is a critical hit, adjust damage acordingly
+        if attack_roll >= crit_min:
+            damage += roll(crit_dice, 10)
+            data.append(damage)
+        else:
+            damage += roll(1,10)
+            data.append(damage)
+    return data
 
-def greataxe(number):
-	data = []
-	for i in range(number):
-		damage = 0
-		attack_roll = roll(1,20)
-		if attack_roll == 20:
-			damage += roll(3,10)
-			data.append(damage)
+falchion_data = weapon(100000, "Falchion")
+greataxe_data = weapon(100000, "Greataxe")
+
+print("Average Falchion Damage:", sum(falchion_data)/len(falchion_data))
+print("Average Greataxe Damage:", sum(greataxe_data)/len(greataxe_data))
 		else:
 			damage += roll(1,10)
 			data.append(damage)
