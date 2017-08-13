@@ -49,13 +49,3 @@ greataxe_data = weapon(100000, "Greataxe")
 
 print("Average Falchion Damage:", sum(falchion_data)/len(falchion_data))
 print("Average Greataxe Damage:", sum(greataxe_data)/len(greataxe_data))
-		else:
-			damage += roll(1,10)
-			data.append(damage)
-	return data
-
-falchion_data = falchion(1000000)
-greataxe_data = greataxe(1000000)
-
-print("Average Falchion Damage:", sum(falchion_data)/len(falchion_data))
-print("Average Greataxe Damage:", sum(greataxe_data)/len(greataxe_data))
